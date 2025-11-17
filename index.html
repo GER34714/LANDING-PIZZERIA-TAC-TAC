@@ -35,22 +35,22 @@ header::after {
     position:absolute;
     top:0; left:0;
     width:100%; height:100%;
-    background:rgba(0,0,0,0.35); /* menos negro */
+    background:rgba(0,0,0,0.25); /* MENOS NEGRO, MÁS FONDO */
 }
 header img {
-    width:120px;
+    width:130px;
     z-index:2;
     position:relative;
 }
 header h1 {
     z-index:2;
     position:relative;
-    font-size:38px;
+    font-size:40px;
     color:#ffca28;
     text-shadow:0 0 12px #ffca28;
 }
 
-/* SECCIÓN */
+/* CONTENEDOR PRINCIPAL */
 .section {
     max-width:650px;
     margin:30px auto;
@@ -58,6 +58,7 @@ header h1 {
     padding:25px;
     border-radius:12px;
     border:1px solid #ffca28;
+    box-shadow:0 0 12px rgba(255,202,40,0.2);
 }
 
 .section h2 {
@@ -66,7 +67,7 @@ header h1 {
     margin-bottom:10px;
 }
 
-/* SELECTOR ENTREGA */
+/* MÉTODO DE ENTREGA */
 .delivery-select {
     margin:15px 0;
     display:flex;
@@ -87,6 +88,7 @@ header h1 {
 }
 .item input {
     transform: scale(1.2);
+    width:60px;
 }
 .item span {
     font-size:17px;
@@ -99,12 +101,12 @@ header h1 {
     padding:15px;
     border-radius:10px;
     text-align:center;
-    font-size:20px;
+    font-size:22px;
     color:#ffca28;
     border:1px solid #ffca28;
 }
 
-/* BOTÓN WHATSAPP + DELIVERY */
+/* BOTÓN WHATSAPP + DELIVERY FLOTANTE */
 .floating-area {
     position:fixed;
     right:20px;
@@ -115,22 +117,28 @@ header h1 {
     z-index:999;
 }
 
+/* BOTÓN WHATSAPP NEÓN */
 .whatsapp-btn {
     background:#25d366;
-    padding:15px 22px;
+    padding:16px 26px;
     border-radius:50px;
     color:#fff;
-    font-size:18px;
+    font-size:19px;
     text-decoration:none;
-    box-shadow:0 0 12px #25d366, 0 0 25px #25d366;
-    animation:neon 1.8s infinite alternate;
+    font-weight:bold;
+    box-shadow:
+        0 0 10px #25d366,
+        0 0 20px #25d366,
+        0 0 40px #25ff9c;
+    animation:neonGlow 1.5s infinite alternate;
 }
 
-@keyframes neon {
-    from { box-shadow:0 0 10px #25d366; }
+@keyframes neonGlow {
+    from { box-shadow:0 0 8px #25d366; }
     to   { box-shadow:0 0 22px #25ff9c; }
 }
 
+/* ICONO DELIVERY MÁS LINDO */
 .delivery-icon {
     width:45px;
     border-radius:50%;
@@ -139,15 +147,16 @@ header h1 {
 
 @keyframes float {
     0%{ transform:translateY(0); }
-    50%{ transform:translateY(-4px); }
+    50%{ transform:translateY(-5px); }
     100%{ transform:translateY(0); }
 }
 
 /* RESPONSIVE */
 @media(max-width:480px){
-    header img { width:100px; }
-    header h1 { font-size:30px; }
+    header img { width:110px; }
+    header h1 { font-size:32px; }
     .item span { font-size:15px; }
+    .whatsapp-btn { font-size:17px; }
 }
 </style>
 </head>
@@ -194,7 +203,7 @@ header h1 {
     </div>
 </div>
 
-<!-- FLOTANTES -->
+<!-- BOTONES FLOTANTES -->
 <div class="floating-area">
     <img class="delivery-icon" src="https://iili.io/fHyrkMb.jpg" alt="Delivery">
     <a class="whatsapp-btn" id="ws-btn" href="#" target="_blank">Pedir Ahora</a>
@@ -231,12 +240,6 @@ wsBtn.addEventListener("click", ()=>{
     wsBtn.href = "https://wa.me/5491149384709?text=" + mensaje;
 });
 </script>
-
-<footer>
-    <p>🕒 De miércoles a lunes (martes cerrado)</p>
-    <p>20:00 a 23:00 hs</p>
-    <p>📍 Manzana 35 - Casa 4 b° Néstor Kirchner - José C. Paz</p>
-</footer>
 
 </body>
 </html>
