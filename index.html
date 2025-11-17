@@ -8,7 +8,7 @@
 
 <!-- OG CON LOGO -->
 <meta property="og:title" content="Pizzería TAC TAC 🍕 | Las mejores pizzas del barrio">
-<meta property="og:description" content="Delivery y retiro en puerta. Pedidos por WhatsApp.">
+<meta property="og:description" content="Promos, menú completo, delivery y pedidos por WhatsApp.">
 <meta property="og:image" content="https://iili.io/fHyhW8J.md.png">
 <meta property="og:url" content="https://TU-LANDING.onrender.com">
 <meta property="og:type" content="website">
@@ -35,7 +35,7 @@ header::after {
     position:absolute;
     top:0; left:0;
     width:100%; height:100%;
-    background:rgba(0,0,0,0.25); /* MENOS NEGRO, MÁS FONDO */
+    background:rgba(0,0,0,0.25);
 }
 header img {
     width:130px;
@@ -45,12 +45,12 @@ header img {
 header h1 {
     z-index:2;
     position:relative;
-    font-size:40px;
+    font-size:42px;
     color:#ffca28;
     text-shadow:0 0 12px #ffca28;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR */
 .section {
     max-width:650px;
     margin:30px auto;
@@ -58,7 +58,7 @@ header h1 {
     padding:25px;
     border-radius:12px;
     border:1px solid #ffca28;
-    box-shadow:0 0 12px rgba(255,202,40,0.2);
+    box-shadow:0 0 12px rgba(255,202,40,0.25);
 }
 
 .section h2 {
@@ -67,7 +67,7 @@ header h1 {
     margin-bottom:10px;
 }
 
-/* MÉTODO DE ENTREGA */
+/* ENTREGA */
 .delivery-select {
     margin:15px 0;
     display:flex;
@@ -106,7 +106,44 @@ header h1 {
     border:1px solid #ffca28;
 }
 
-/* BOTÓN WHATSAPP + DELIVERY FLOTANTE */
+/* SECCIÓN PROMOS */
+.promo-section {
+    max-width:650px;
+    margin:30px auto;
+    background:#242424;
+    padding:20px;
+    border-radius:12px;
+    border:2px solid #ff4444;
+    box-shadow:0 0 15px rgba(255,68,68,0.4);
+}
+.promo-section h2 {
+    font-size:26px;
+    color:#ff4444;
+    margin-bottom:10px;
+    text-align:center;
+}
+.promo-item {
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    padding:8px 0;
+}
+
+/* INFO EXTRA */
+.info-box {
+    max-width:650px;
+    margin:30px auto;
+    padding:20px;
+    background:#111;
+    border-radius:10px;
+    border:1px solid #333;
+}
+.info-box p {
+    margin:6px 0;
+    font-size:17px;
+}
+
+/* WHATSAPP + DELIVERY */
 .floating-area {
     position:fixed;
     right:20px;
@@ -117,15 +154,14 @@ header h1 {
     z-index:999;
 }
 
-/* BOTÓN WHATSAPP NEÓN */
 .whatsapp-btn {
     background:#25d366;
     padding:16px 26px;
     border-radius:50px;
     color:#fff;
     font-size:19px;
-    text-decoration:none;
     font-weight:bold;
+    text-decoration:none;
     box-shadow:
         0 0 10px #25d366,
         0 0 20px #25d366,
@@ -138,7 +174,6 @@ header h1 {
     to   { box-shadow:0 0 22px #25ff9c; }
 }
 
-/* ICONO DELIVERY MÁS LINDO */
 .delivery-icon {
     width:45px;
     border-radius:50%;
@@ -154,7 +189,7 @@ header h1 {
 /* RESPONSIVE */
 @media(max-width:480px){
     header img { width:110px; }
-    header h1 { font-size:32px; }
+    header h1 { font-size:34px; }
     .item span { font-size:15px; }
     .whatsapp-btn { font-size:17px; }
 }
@@ -168,7 +203,26 @@ header h1 {
     <h1>Pizzería TAC TAC</h1>
 </header>
 
+<!-- PROMOS -->
+<div class="promo-section">
+    <h2>🔥 PROMOS 🔥</h2>
+    <div class="promo-item"><span>3 Mozzarella</span> <strong>$21.000</strong></div>
+    <div class="promo-item"><span>3 Especiales</span> <strong>$25.000</strong></div>
+</div>
+
+<!-- MENÚ -->
 <div class="section">
+    <h2>🍕 PIZZAS</h2>
+
+    <div class="item"><span>Mozzarella — $8500</span><input type="number" min="0" value="0" class="qty" data-price="8500"></div>
+    <div class="item"><span>Doble Mozzarella — $10500</span><input type="number" min="0" value="0" class="qty" data-price="10500"></div>
+    <div class="item"><span>Jamón — $9500</span><input type="number" min="0" value="0" class="qty" data-price="9500"></div>
+    <div class="item"><span>Jamón y Morrón — $10500</span><input type="number" min="0" value="0" class="qty" data-price="10500"></div>
+    <div class="item"><span>Calabresa — $10500</span><input type="number" min="0" value="0" class="qty" data-price="10500"></div>
+    <div class="item"><span>Napolitana — $10500</span><input type="number" min="0" value="0" class="qty" data-price="10500"></div>
+    <div class="item"><span>Muzza con Huevo — $10000</span><input type="number" min="0" value="0" class="qty" data-price="10000"></div>
+    <div class="item"><span>Fugazzeta — $10000</span><input type="number" min="0" value="0" class="qty" data-price="10000"></div>
+    <div class="item"><span>Muzza con Salchicha — $10500</span><input type="number" min="0" value="0" class="qty" data-price="10500"></div>
 
     <h2>🛵 Método de entrega</h2>
     <div class="delivery-select">
@@ -176,31 +230,17 @@ header h1 {
         <label><input type="radio" name="envio" value="Retiro en puerta"> Retiro en Puerta</label>
     </div>
 
-    <h2>🍕 Elegí tu pedido</h2>
-
-    <div class="item">
-        <span>Mozzarella — $8500</span>
-        <input type="number" min="0" value="0" class="qty" data-price="8500">
-    </div>
-
-    <div class="item">
-        <span>Calabresa — $10500</span>
-        <input type="number" min="0" value="0" class="qty" data-price="10500">
-    </div>
-
-    <div class="item">
-        <span>Fugazzetta — $10000</span>
-        <input type="number" min="0" value="0" class="qty" data-price="10000">
-    </div>
-
-    <div class="item">
-        <span>Jamón y Morrón — $10500</span>
-        <input type="number" min="0" value="0" class="qty" data-price="10500">
-    </div>
-
     <div class="total-box">
         Total: $<span id="total">0</span>
     </div>
+</div>
+
+<!-- INFO EXTRA -->
+<div class="info-box">
+    <p><strong>Horario:</strong> De miércoles a lunes (martes cerrado)</p>
+    <p><strong>Atención:</strong> 20:00 a 23:00 hs</p>
+    <p><strong>Dirección:</strong> Manzana 35 - Casa 4</p>
+    <p><strong>Teléfono:</strong> 1149384709</p>
 </div>
 
 <!-- BOTONES FLOTANTES -->
